@@ -11,6 +11,8 @@ public class EndangeredAnimal {
         this.health = health;
         this.age = age;
     }
-
+    int getId(){
+        return id;
+    }
 
 }

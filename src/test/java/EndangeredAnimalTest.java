@@ -12,8 +12,14 @@ public class EndangeredAnimalTest {
     @Test
     public void InitializeNewEndangeredAnimal_1() throws Exception{
         EndangeredAnimal endangeredanimal = new EndangeredAnimal(1, "rhino","healthy","young");
-        assertEquals(1, endangeredanimal.getId);
+        assertEquals(1, endangeredanimal.getId());
     }
+    @Test
+    public void InitializeNewEndangeredAnimal_rhino() throws Exception{
+        EndangeredAnimal endangeredanimal = new EndangeredAnimal(1, "rhino","healthy","young");
+        assertEquals("rhino", endangeredanimal.getName());
+    }
+
 
 
 }
