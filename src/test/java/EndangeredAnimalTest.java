@@ -24,6 +24,11 @@ public class EndangeredAnimalTest {
         EndangeredAnimal endangeredanimal = new EndangeredAnimal(1, "rhino","healthy","young");
         assertEquals("healthy", endangeredanimal.getHealth());
     }
+    @Test
+    public void InitializeNewEndangeredAnimal_young() throws Exception{
+        EndangeredAnimal endangeredanimal = new EndangeredAnimal(1, "rhino","healthy","young");
+        assertEquals("young", endangeredanimal.getAge());
+    }
 
 
 

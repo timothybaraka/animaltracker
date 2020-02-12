@@ -17,5 +17,8 @@ public class EndangeredAnimal {
     String getName(){
         return name;
     }
+    String getHealth(){
+        return health;
+    }
 
 }
