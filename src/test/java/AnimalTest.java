@@ -14,6 +14,12 @@ public class AnimalTest {
         Animal animal = new Animal(1, "lion");
         assertEquals(1, animal.getId());
     }
+    @Test
+    public void NameGetsCorrectlyAdded_1() throws Exception{
+        Animal animal = new Animal(1, "lion");
+        assertEquals("lion", animal.getName());
+    }
+
 
 
 }
