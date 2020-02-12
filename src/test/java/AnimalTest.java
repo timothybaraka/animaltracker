@@ -10,9 +10,9 @@ public class AnimalTest {
         assertEquals(true, animal instanceof Animal );
     }
     @Test
-    public void IdGetsCorrectltAdded_true() throws Exception{
+    public void IdGetsCorrectltAdded_1() throws Exception{
         Animal animal = new Animal(1, "lion");
-        assertEquals(true, animal instanceof Animal );
+        assertEquals(1, animal.getId());
     }
 
 
