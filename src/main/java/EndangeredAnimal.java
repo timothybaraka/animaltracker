@@ -14,5 +14,8 @@ public class EndangeredAnimal {
     int getId(){
         return id;
     }
+    String getName(){
+        return name;
+    }
 
 }
