@@ -1,3 +1,5 @@
+package models;
+
 public class EndangeredAnimal {
 
     private int id;
@@ -19,6 +21,9 @@ public class EndangeredAnimal {
     }
     String getHealth(){
         return health;
+    }
+    String getAge(){
+        return age;
     }
 
 }

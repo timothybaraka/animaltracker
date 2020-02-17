@@ -1,3 +1,6 @@
+package models;
+
+import models.EndangeredAnimal;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -29,6 +32,7 @@ public class EndangeredAnimalTest {
         EndangeredAnimal endangeredanimal = new EndangeredAnimal(1, "rhino","healthy","young");
         assertEquals("young", endangeredanimal.getAge());
     }
+
 
 
 
