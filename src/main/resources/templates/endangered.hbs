@@ -1,23 +1,37 @@
 
 {{#partial "content"}}
-<form action="/">
+<form action="/sightings">
 
     <h3>ANIMAL`S DETAILS</h3>
     <div class="form-group">
-        <label for="name" >models.Animal Name</label>
-        <input id ="name" name="name" class="form-control" type="text">
+        <label for="names" >Animal Name</label>
+        <input id ="names" name="names" class="form-control" type="text">
     </div>
 
     <div class="form-group">
-        <label for="health">models.Animal Health</label>
-        <input id ="health" name="health" class="form-control" type="text">
-    </div>
-    <div class="form-group">
-        <label for="age">models.Animal Age</label>
-        <input id ="age" name="age"  class="form-control" type="numbers">
+        <label for="healthy">Animal Health</label>
+        <select id="healthy" name="healthy"  class="form-control">
+            <option value="healthy">Healthy</option>
+            <option value="ill">Ill</option>
+            <option value="okay">Okay</option>
+        </select>
     </div>
 
-    <div><button type="submit">Submit models.Animal</button></div>
+    <div class="form-group">
+        <label for="ages">Animal Age</label>
+        <select id="ages" name="ages"  class="form-control">
+            <option value="newborn">Newborn</option>
+            <option value="young">Young</option>
+            <option value="adult">Adult</option>
+
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label for="rangers">Ranger</label>
+        <input id ="rangers" name="rangers" class="form-control" type="text">
+    </div>
+    <div><button type="submit">Submit Animal</button></div>
 
 </form>
 {{/partial }}

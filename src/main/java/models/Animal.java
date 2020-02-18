@@ -10,22 +10,11 @@ public class Animal {
     private int id;
     private String name;
 
-public Animal( String name){
-    this.id = id;
-    this.name = name;
-}
-    int getId(){
-    return id;
+    public Animal( String name){
+        this.id = id;
+        this.name = name;
     }
-    String getName(){
-        return name;
-    }
-    public void setName (String name){
-    this.name = name;
-}
-    public int setId(int id){
-    return this.id;
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -41,6 +30,26 @@ public Animal( String name){
         return Objects.hash(id, name);
     }
 
+
+    public int getId(){
+        return id;
+    }
+
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName (String name){
+        this.name = name;
+    }
+
+
+    public int setId(int id){
+        return this.id;
+    }
+
+
     public void saveAnimal() {
         try (Connection con = Database.sql2o.open()) {
             String sql = "INSERT INTO animals (name) VALUES (:name);";
@@ -50,14 +59,17 @@ public Animal( String name){
                     .getKey();
         }
     }
-        public static List<Animal> getAll() {
-            try (Connection con = Database.sql2o.open()) {
-                String sql = "SELECT * FROM animals";
-                return con.createQuery(sql)
-                        .executeAndFetch(Animal.class);
-            }
+
+  //Method to return all entries in a database
+    public static List<Animal> getAll() {
+        try (Connection con = Database.sql2o.open()) {
+            String sql = "SELECT * FROM animals";
+            return con.createQuery(sql)
+                    .executeAndFetch(Animal.class);
         }
     }
+
+}
 
 
 
