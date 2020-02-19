@@ -1,40 +1,52 @@
 package models;
 
 import models.EndangeredAnimal;
+import org.junit.Rule;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class EndangeredAnimalTest {
 
+    @Rule
+    public DatabaseRule database = new DatabaseRule();
+
     @Test
-    public void InitializeNewEndangeredAnimal_true() throws Exception{
-        EndangeredAnimal endangeredanimal = new EndangeredAnimal(1, "rhino","healthy","young");
-        assertEquals(true, endangeredanimal instanceof EndangeredAnimal );
+    public void InitializeNewEndangeredAnimal_true(){
+        EndangeredAnimal endangeredanimal = new EndangeredAnimal("rhino", "healthy", "young");
+        assertEquals(true, endangeredanimal instanceof EndangeredAnimal);
     }
+
+
+
     @Test
-    public void InitializeNewEndangeredAnimal_1() throws Exception{
-        EndangeredAnimal endangeredanimal = new EndangeredAnimal(1, "rhino","healthy","young");
-        assertEquals(1, endangeredanimal.getId());
-    }
-    @Test
-    public void InitializeNewEndangeredAnimal_rhino() throws Exception{
-        EndangeredAnimal endangeredanimal = new EndangeredAnimal(1, "rhino","healthy","young");
+    public void InitializeNewEndangeredAnimal_rhino() throws Exception {
+        EndangeredAnimal endangeredanimal = new EndangeredAnimal( "rhino", "healthy", "young");
         assertEquals("rhino", endangeredanimal.getName());
     }
+
     @Test
-    public void InitializeNewEndangeredAnimal_healthy() throws Exception{
-        EndangeredAnimal endangeredanimal = new EndangeredAnimal(1, "rhino","healthy","young");
-        assertEquals("healthy", endangeredanimal.getHealth());
-    }
-    @Test
-    public void InitializeNewEndangeredAnimal_young() throws Exception{
-        EndangeredAnimal endangeredanimal = new EndangeredAnimal(1, "rhino","healthy","young");
-        assertEquals("young", endangeredanimal.getAge());
+    public void InitializeNewEndangeredAnimal_healthy() throws Exception {
+        EndangeredAnimal endangeredanimal = new EndangeredAnimal("rhino", "healthy", "young");
+        assertEquals("young", endangeredanimal.getHealth());
     }
 
+    @Test
+    public void InitializeNewEndangeredAnimal_young() throws Exception {
+        EndangeredAnimal endangeredanimal = new EndangeredAnimal( "rhino", "healthy", "young");
+        assertEquals("healthy", endangeredanimal.getAge());
+    }
 
-
-
-
+    @Test
+    public void save_ObjectToDataBase_true() {
+        EndangeredAnimal endangeredanimal = new EndangeredAnimal( "rhino", "healthy", "young");
+        endangeredanimal.saveAnimal();
+        assertTrue(EndangeredAnimal.getAll().get(0).equals(endangeredanimal));
+    }
 }
+
+
+
+
+
+

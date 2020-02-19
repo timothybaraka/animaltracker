@@ -1,3 +1,4 @@
+import models.EndangeredAnimal;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
@@ -14,6 +15,8 @@ public class App {
 
       get("/", (request,response)-> {
           Map<String, Object> model = new HashMap<>();
+          String ranger = request.queryParams("ranger");
+          model.put("ranger", ranger);
           return new ModelAndView(model, "home.hbs");
       }, new HandlebarsTemplateEngine());
 
@@ -45,8 +48,8 @@ public class App {
 
             String names = request.queryParams("names");
             String healthy = request.queryParams("healthy");
-            String ages = request.queryParams("age1");
-            String rangers = request.queryParams("ranger1");
+            String ages = request.queryParams("ages");
+            String rangers = request.queryParams("rangers");
             model.put("names", names);
             model.put("healthy", healthy);
             model.put("ages", ages);
